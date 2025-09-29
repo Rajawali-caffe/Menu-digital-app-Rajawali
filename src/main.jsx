@@ -1,13 +1,21 @@
-import React from "react"
-import ReactDOM from "react-dom/client"
-import App from "./App"
-import Admin from "./Admin"
-import "./index.css"
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import CustomerMenu from './pages/CustomerMenu'
+import AdminLogin from './pages/AdminLogin'
+import AdminPanel from './pages/AdminPanel'
+import QRPage from './pages/QRPage'
+import './styles.css'
 
-const path = window.location.pathname
-
-ReactDOM.createRoot(document.getElementById("root")).render(
+createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {path === "/admin-1234" ? <Admin /> : <App />}
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<CustomerMenu/>} />
+        <Route path='/qr' element={<QRPage/>} />
+        <Route path='/admin/login' element={<AdminLogin/>} />
+        <Route path='/admin' element={<AdminPanel/>} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 )
