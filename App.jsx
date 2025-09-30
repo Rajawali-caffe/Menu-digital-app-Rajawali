@@ -14,3 +14,15 @@ function App() {
 }
 
 export default App;
+import AdminPanel from "./Admin"
+
+function App() {
+  return (
+    <div>
+      <h1 className="text-2xl font-bold p-4">Panel Admin</h1>
+      <AdminPanel />
+    </div>
+  )
+}
+
+export default App
